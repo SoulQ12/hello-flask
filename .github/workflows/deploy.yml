@@ -35,5 +35,4 @@ jobs:
             pkill -f app.py || true
             setsid python3 app.py > flask.log 2>&1 < /dev/null &
             disown
-            echo "✅ Flask restarted and detached successfully"
-          '
+            echo "✅ Flask restarted and detached successfully"'
