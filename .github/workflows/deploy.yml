@@ -32,5 +32,6 @@ jobs:
           cd ~/hello-flask
           git pull origin main
           pkill -f app.py || true
-          nohup python3 app.py &
+          nohup python3 app.py > flask.log 2>&1 &
+echo "Flask restarted"
 
