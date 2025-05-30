@@ -29,9 +29,9 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
-          cd ~/hello-flask
-          git pull origin main
-          pkill -f app.py || true
-          nohup python3 app.py > flask.log 2>&1 &
-          echo "Flask restarted"
+  cd ~/hello-flask
+  git pull origin main
+  pkill -f app.py || true
+  setsid python3 app.py > flask.log 2>&1 < /dev/null &
+  echo "✅ Flask restarted successfully"
 
